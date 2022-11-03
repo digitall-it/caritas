@@ -2,12 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Inventory;
-use App\Models\Product;
-use App\Models\Warehouse;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class WarehouseSeeder extends Seeder
+class StockTransactionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,6 +14,6 @@ class WarehouseSeeder extends Seeder
      */
     public function run()
     {
-        Warehouse::factory()->count(4)->create();
+        //
     }
 }

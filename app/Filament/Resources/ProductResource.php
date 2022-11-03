@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\WarehouseResource\Pages;
-use App\Filament\Resources\WarehouseResource\RelationManagers;
-use App\Models\Warehouse;
+use App\Filament\Resources\ProductResource\Pages;
+use App\Filament\Resources\ProductResource\RelationManagers;
+use App\Models\Product;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -12,9 +12,9 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 
-class WarehouseResource extends Resource
+class ProductResource extends Resource
 {
-    protected static ?string $model = Warehouse::class;
+    protected static ?string $model = Product::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -31,16 +31,16 @@ class WarehouseResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListWarehouses::route('/'),
-            'create' => Pages\CreateWarehouse::route('/create'),
-            'edit' => Pages\EditWarehouse::route('/{record}/edit'),
+            'index' => Pages\ListProducts::route('/'),
+            'create' => Pages\CreateProduct::route('/create'),
+            'edit' => Pages\EditProduct::route('/{record}/edit'),
         ];
     }
 
     public static function getRelations(): array
     {
         return [
-            'products' => RelationManagers\ProductsRelationManager::class,
+            'warehouses' => RelationManagers\WarehousesRelationManager::class,
         ];
     }
 

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Warehouse extends Model
+class Product extends Model
 {
     use HasFactory;
 
@@ -13,8 +13,8 @@ class Warehouse extends Model
         'name',
     ];
 
-    public function products()
+    public function warehouses()
     {
-        return $this->belongsToMany(Product::class, 'inventories')->withPivot('quantity');;
+        return $this->belongsToMany(Warehouse::class, 'inventories')->withPivot('quantity');;
     }
 }
