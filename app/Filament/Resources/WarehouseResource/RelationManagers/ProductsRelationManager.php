@@ -7,8 +7,6 @@ use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ProductsRelationManager extends RelationManager
 {
@@ -40,17 +38,17 @@ class ProductsRelationManager extends RelationManager
                 //
             ])
             ->headerActions([
-//                Tables\Actions\CreateAction::make(),
+                //                Tables\Actions\CreateAction::make(),
                 Tables\Actions\AttachAction::make(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DetachAction::make(),
-//                Tables\Actions\DeleteAction::make(),
+                //                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DetachBulkAction::make(),
-//                Tables\Actions\DeleteBulkAction::make(),
+                //                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 }

@@ -50,7 +50,7 @@ class WarehouseResource extends Resource
             ->columns([
                 TextColumn::make('name')
                     ->sortable()
-                    ->searchable()
+                    ->searchable(),
             ])
             ->filters([
                 //
