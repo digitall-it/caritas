@@ -41,6 +41,7 @@ class ProductResource extends Resource
     {
         return [
             'warehouses' => RelationManagers\WarehousesRelationManager::class,
+            'stock_transactions' => RelationManagers\StockTransactionsRelationManager::class,
         ];
     }
 

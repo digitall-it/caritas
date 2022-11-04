@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
+use App\Models\Warehouse;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,9 @@ class StockTransactionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'quantity' => random_int(-10, 1000),
+            'product_id' => Product::inRandomOrder()->first()->id,
+            'warehouse_id' => Warehouse::inRandomOrder()->first()->id,
         ];
     }
 }

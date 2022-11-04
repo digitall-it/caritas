@@ -17,4 +17,9 @@ class Warehouse extends Model
     {
         return $this->belongsToMany(Product::class, 'inventories')->withPivot('quantity');
     }
+
+    public function stock_transactions()
+    {
+        return $this->hasMany(StockTransaction::class, 'warehouse_id');
+    }
 }

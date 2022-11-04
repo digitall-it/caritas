@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\StockTransaction;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,7 +19,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             WarehouseSeeder::class,
             ProductSeeder::class,
-            InventorySeeder::class,
+            //InventorySeeder::class,
+            StockTransactionSeeder::class,
         ]);
     }
 }

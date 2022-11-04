@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\StockTransaction;
 use Illuminate\Database\Seeder;
 
 class StockTransactionSeeder extends Seeder
@@ -13,6 +14,6 @@ class StockTransactionSeeder extends Seeder
      */
     public function run()
     {
-        //
+        StockTransaction::factory()->count(50)->create();
     }
 }
