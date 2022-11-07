@@ -34,7 +34,9 @@ class StockTransactionsRelationManager extends RelationManager
             ->columns([
                 Tables\Columns\TextColumn::make('id'),
                 Tables\Columns\TextColumn::make('quantity'),
-                Tables\Columns\TextColumn::make('warehouse.name'),
+                Tables\Columns\TextColumn::make('warehouse.name')
+                    ->sortable()
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('updated_at')->since(),
             ])
             ->filters([

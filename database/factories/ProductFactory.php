@@ -16,8 +16,30 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $prodotti = array(
+            'Caffe', 
+            'Fette biscottate', 
+            'Biscotti', 
+            'Marmellata', 
+            'Legumi', 
+            'Pasta', 
+            'Passate di pomodoro', 
+            'Pelea', 
+            'Zucchero', 
+            'Farina', 
+            'Carne in scatola', 
+            'Crackers', 
+            'Crostate', 
+            'Riso', 
+            'Cornetti', 
+            'Succhi di frutta', 
+            'Salumi', 
+            'Formaggi',
+        );
+
         return [
-            'name' => $this->faker->name,
+            'name' => $prodotti[rand(0,16)],
+            'barcode' => rand(123456789,987654321),
         ];
     }
 }
