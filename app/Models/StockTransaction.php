@@ -24,6 +24,7 @@ class StockTransaction extends Model
     {
         return $this->belongsTo(Warehouse::class);
     }
+
     protected static function booted()
     {
         static::created(function ($stockTransaction) {

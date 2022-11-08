@@ -7,8 +7,6 @@ use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class StockTransactionsRelationManager extends RelationManager
 {
@@ -24,7 +22,7 @@ class StockTransactionsRelationManager extends RelationManager
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Select::make('product_id')
-                ->relationship('product', 'name')
+                ->relationship('product', 'name'),
             ]);
     }
 

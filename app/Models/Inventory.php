@@ -10,6 +10,7 @@ class Inventory extends Model
     use HasFactory;
 
     public $timestamps = false;
+
     public $incrementing = false;
 
     //fillable
@@ -32,7 +33,6 @@ class Inventory extends Model
             ->where('product_id', $stockTransaction->product_id)
             ->sum('quantity');
 
-
         if (self::where('warehouse_id', $stockTransaction->warehouse_id)
             ->where('product_id', $stockTransaction->product_id)
             ->exists()) {
@@ -49,5 +49,4 @@ class Inventory extends Model
 
         self::where('quantity', 0)->delete();
     }
-
 }

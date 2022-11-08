@@ -2,16 +2,16 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Tables;
-use App\Models\Warehouse;
-use Filament\Resources\Form;
-use Filament\Resources\Table;
-use Filament\Resources\Resource;
-use Filament\Forms\Components\Card;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
 use App\Filament\Resources\WarehouseResource\Pages;
 use App\Filament\Resources\WarehouseResource\RelationManagers;
+use App\Models\Warehouse;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\TextInput;
+use Filament\Resources\Form;
+use Filament\Resources\Resource;
+use Filament\Resources\Table;
+use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 
 class WarehouseResource extends Resource
 {
@@ -23,11 +23,11 @@ class WarehouseResource extends Resource
     {
         return $form
             ->schema([
-                Card::make([  
+                Card::make([
                     TextInput::make('name')
                         ->required()
                         ->label('Nome'),
-                ])
+                ]),
             ]);
     }
 

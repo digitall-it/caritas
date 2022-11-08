@@ -2,9 +2,9 @@
 
 namespace Tests;
 
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -23,5 +23,4 @@ abstract class TestCase extends BaseTestCase
 //    public function test_calculate_inventory_updated_from_updated_transaction() {
 //        $this->assertTrue(false);
 //    }
-
 }

@@ -2,16 +2,16 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Tables;
-use App\Models\Product;
-use Filament\Resources\Form;
-use Filament\Resources\Table;
-use Filament\Resources\Resource;
-use Filament\Forms\Components\Card;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
+use App\Models\Product;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\TextInput;
+use Filament\Resources\Form;
+use Filament\Resources\Resource;
+use Filament\Resources\Table;
+use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 
 class ProductResource extends Resource
 {
@@ -23,15 +23,15 @@ class ProductResource extends Resource
     {
         return $form
             ->schema([
-                Card::make([                    
+                Card::make([
                     TextInput::make('name')
                         ->required()
                         ->label('Nome'),
                     TextInput::make('barcode')
                         ->required()
                         ->label('Codice a barre'),
-                    
-                ])->columns(2)
+
+                ])->columns(2),
             ]);
     }
 

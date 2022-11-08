@@ -78,7 +78,7 @@ class InventoryTest extends TestCase
         $this->assertDatabaseHas('inventories', [
             'warehouse_id' => $warehouse->id,
             'product_id' => $product->id,
-            'quantity' => $quantity*2,
+            'quantity' => $quantity * 2,
         ]);
     }
 
@@ -109,7 +109,6 @@ class InventoryTest extends TestCase
             'warehouse_id' => $warehouse->id,
             'product_id' => $product->id,
         ]);
-
     }
 
     /**
@@ -190,6 +189,4 @@ class InventoryTest extends TestCase
             ->where('product_id', $product->id)
             ->count());
     }
-
-
 }

@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::create('stock_transactions', function (Blueprint $table) {
-
             $table->id();
             //$table->primary(['product_id', 'warehouse_id']);
 

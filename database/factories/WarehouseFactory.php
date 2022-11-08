@@ -16,14 +16,14 @@ class WarehouseFactory extends Factory
      */
     public function definition()
     {
-        $offices = array(
+        $offices = [
             'Lacco Ameno',
             'Ischia',
-            'Forio', 
-        );
+            'Forio',
+        ];
 
         return [
-            'name' => $offices[rand(0,2)],
+            'name' => $offices[rand(0, 2)],
             // 'name' => $this->faker->name,
         ];
     }
