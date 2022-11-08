@@ -13,6 +13,7 @@ class StockTransaction extends Model
         'warehouse_id',
         'product_id',
         'quantity',
+        'notes',
     ];
 
     public function product()
@@ -35,5 +36,10 @@ class StockTransaction extends Model
 //            $stockTransaction->updateInventory();
             Inventory::updateFromTransaction($stockTransaction);
         });
+    }
+
+    public function getNameAttribute()
+    {
+        return ($this->quantity > 0 ? 'Carico' : 'Scarico').' di '.$this->quantity.' '.$this->product->name.' a '.$this->warehouse->name;
     }
 }

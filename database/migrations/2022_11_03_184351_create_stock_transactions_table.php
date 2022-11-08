@@ -18,6 +18,7 @@ return new class extends Migration
             //$table->primary(['product_id', 'warehouse_id']);
 
             $table->integer('quantity')->default(0);
+            $table->text('notes')->nullable();
 
             $table->foreignIdFor(\App\Models\Product::class)->constrained()->onDelete('cascade');
             $table->foreignIdFor(\App\Models\Warehouse::class)->constrained()->onDelete('cascade');

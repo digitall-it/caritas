@@ -22,6 +22,7 @@ class StockTransactionFactory extends Factory
             'quantity' => random_int(-10, 1000),
             'product_id' => Product::inRandomOrder()->first()->id,
             'warehouse_id' => Warehouse::inRandomOrder()->first()->id,
+            'notes' => $this->faker->boolean(10) ? $this->faker->sentence : null,
         ];
     }
 }

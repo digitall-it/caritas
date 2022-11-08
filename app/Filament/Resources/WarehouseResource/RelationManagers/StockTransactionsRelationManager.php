@@ -12,7 +12,7 @@ class StockTransactionsRelationManager extends RelationManager
 {
     protected static string $relationship = 'stock_transactions';
 
-    protected static ?string $recordTitleAttribute = 'id';
+    protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Form $form): Form
     {
@@ -22,20 +22,30 @@ class StockTransactionsRelationManager extends RelationManager
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Select::make('product_id')
-                ->relationship('product', 'name'),
-            ]);
+                    ->relationship('product', 'name')
+                    ->columnSpan(2),
+                Forms\Components\Textarea::make('notes')
+                    ->columnSpan(3),
+
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('quantity'),
+                //Tables\Columns\TextColumn::make('id'),
+
                 Tables\Columns\TextColumn::make('product.name')
                     ->sortable()
                     ->searchable(),
+                Tables\Columns\TextColumn::make('quantity'),
+                Tables\Columns\TextColumn::make('notes')
+                    ->searchable()
+                    ->sortable()
+                    ->limit(50),
                 Tables\Columns\TextColumn::make('updated_at')->since(),
+
             ])
             ->filters([
                 //

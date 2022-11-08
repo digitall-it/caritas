@@ -22,19 +22,27 @@ class StockTransactionsRelationManager extends RelationManager
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Select::make('warehouse_id')
-                ->relationship('warehouse', 'name'),
-            ]);
+                ->relationship('warehouse', 'name')
+                ->columnSpan(2),
+                Forms\Components\Textarea::make('notes')
+                ->columnSpan(3),
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('quantity'),
+                //Tables\Columns\TextColumn::make('id'),
+
                 Tables\Columns\TextColumn::make('warehouse.name')
                     ->sortable()
                     ->searchable(),
+                Tables\Columns\TextColumn::make('quantity'),
+                Tables\Columns\TextColumn::make('notes')
+                    ->searchable()
+                    ->sortable()
+                    ->limit(50),
                 Tables\Columns\TextColumn::make('updated_at')->since(),
             ])
             ->filters([

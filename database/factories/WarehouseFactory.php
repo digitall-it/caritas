@@ -16,14 +16,18 @@ class WarehouseFactory extends Factory
      */
     public function definition()
     {
-        $offices = [
-            'Lacco Ameno',
-            'Ischia',
-            'Forio',
-        ];
-
         return [
-            'name' => $offices[rand(0, 2)],
+            //'name' => $offices[rand(0, 2)],
+            // name is a random unique value from the array
+            'name' => $this->faker->unique()->randomElement([
+                'Lacco Ameno',
+                'Ischia',
+                'Forio',
+                'Casamicciola',
+                'Sant\'Angelo',
+                'Barano',
+                'Serrara Fontana',
+            ]),
             // 'name' => $this->faker->name,
         ];
     }
