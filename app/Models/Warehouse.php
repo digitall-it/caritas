@@ -13,6 +13,7 @@ class Warehouse extends Model
         'name',
     ];
 
+    // Prodotti presenti nel magazzino, con la quantità giacente (tabella pivot inventories).
     public function products()
     {
         return $this->belongsToMany(Product::class, 'inventories')->withPivot('quantity');
